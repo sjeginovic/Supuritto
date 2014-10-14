@@ -36,9 +36,9 @@ namespace Supuritto
                             sb.Append(Environment.NewLine);
                         }
 
-                        int index = testLine.IndexOf(':');
+                        int index = fileContent[lastFoundLineNumber].IndexOf(':');
 
-                        string newFile = testLine.Substring(index + 1);
+                        string newFile = fileContent[lastFoundLineNumber].Substring(index + 1);
                         string newFileName = Path.Combine(location + @"\output\" + newFile + ".txt");
                         allHosts.Add(newFile);
                         using (StreamWriter outfile = new StreamWriter(newFileName))
